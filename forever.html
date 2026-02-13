@@ -22,11 +22,17 @@
             z-index: -1;
         }
 
-        .content {
-            text-align: center;
-            margin-top: 12vh;
-            animation: fadeIn 3s ease-in-out;
-        }
+       .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
 
         /* Small Center Photo */
         .main-photo {
@@ -42,12 +48,14 @@
         }
 
         .lyrics {
-            font-size: 26px;
-            width: 70%;
-            margin: 20px auto;
-            line-height: 1.5;
-            text-shadow: 0 0 10px #ffb6c1;
-        }
+    font-size: 26px;
+    max-width: 600px;
+    width: 90%;
+    margin-top: 20px;
+    line-height: 1.5;
+    text-shadow: 0 0 10px #ffb6c1;
+}
+
 
         @keyframes fadeIn {
             from { opacity: 0; }
