@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>She Said Yes ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+        }
+
+        .love-page {
+            margin-top: 150px;
+        }
+
+        .heart {
+            font-size: 50px;
+            animation: float 2s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="love-page">
+    <h1>You Said YES and You Cant say No.No sonna avlotha unku . 😍💍</h1>
+    <img id="slideshow" src="photo1.jpg" width="300"
+style="border-radius:20px; margin-top:20px;">
+
+<br><br>
+<button onclick="goToForever()" style="
+padding:12px 25px;
+font-size:18px;
+background:#ff4d6d;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;">
+Next Surprise 💖
+</button>
+
+
+    <p style="font-size:22px; width:70%; margin:auto;">
+        This is the happiest moment of my life.
+        Una evlo kasta padutha mudiyumo avlo paduthiten.Ena first first unmaiya love panna ponnu neetha.una vittena vera unmari ponnu adutha jenmam tha varum ila athvum rare tha
+        En friends ku oru keta vartha pesunathu break pannitu poitanga.na evlo cheap ah eruthurukenu teriyuthu.Elame en mistake tha.Atahiyum thandi enaga vanthavale.My Queen.Nee ilathapa than di una epdila pathukanum nu nenaichen.
+        ana life la second chance la kastam.But ithuvum nallathuku tha.Unnoda unmaiyana value purinjukiten and en thappa purinchukitten.Unna nenaikatha nale ila.Na happy erukura mari elartayum kamipen.unkita kuda snap la anupuven.but unakaga tha snap eh anupuve.En chellakuttiye , en ammukuttiye nammala yaralyum pirika mudiyathu.apdi nadantha enaku intha life eh vendam.Enna vittu pogatha di epayum kekurathutha,
+        I LOVE YOU SO MUCH DIIII MY PONDATTIIII(MINE)
+    </p>
+
+    <div class="heart">❤️ ❤️ ❤️</div>
+</div>
+<script>
+let images = ["photo1.jpg", "photo2.jpg", "photo3.jpg"];
+let i = 0;
+
+setInterval(function() {
+    i = (i + 1) % images.length;
+    document.getElementById("slideshow").src = images[i];
+}, 2000);
+
+function goToForever() {
+    window.location.href = "forever.html";
+}
+
+</script>
+
+
+</body>
+</html>

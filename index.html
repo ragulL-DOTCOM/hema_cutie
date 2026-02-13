@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Someone Special ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hey Lusu Hema ❤️</h1>
+        <p class="message">
+            From the day I met you, my life changed in the most beautiful way.
+            You are my happiness, my peace, and my favorite person.
+            Every moment with you feels special. And Accept my sorry also di.
+        </p>
+
+        <button onclick="showProposal()">Click for Surprise 💌</button>
+
+        <div id="proposal" class="hidden">
+            <h2>Will You Be Mine Forever? 💍</h2>
+            <button class="yes" onclick="goToYesPage()">Yes 😍</button>
+            <button class="no" onmouseover="moveButton()">No 😏</button>
+        </div>
+    </div>
+
+<script>
+function showProposal() {
+    document.getElementById("proposal").classList.remove("hidden");
+}
+
+function moveButton() {
+    const button = document.querySelector(".no");
+    button.style.position = "absolute";
+    button.style.top = Math.random() * 300 + "px";
+    button.style.left = Math.random() * 300 + "px";
+}
+function goToYesPage() {
+    window.location.href = "yes.html";
+}
+
+</script>
+
+</body>
+</html>
