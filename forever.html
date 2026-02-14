@@ -89,6 +89,14 @@
 .q2 { top: 70%; left: 15%; }
 .q3 { top: 25%; right: 10%; }
 .q4 { bottom: 15%; right: 15%; }
+        <audio controls style="
+margin-top:15px;
+width:220px;
+filter: drop-shadow(0 0 10px pink);
+">
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
 
    
 
@@ -101,9 +109,10 @@
 
 <div class="background"></div>
 
-<audio id="mysong">
+<audio controls>
     <source src="song.mp3" type="audio/mpeg">
 </audio>
+
 
 
 
@@ -175,16 +184,7 @@ document.addEventListener("click", function () {
     song.play();
 }, { once: true });
     <script>
-let song = document.getElementById("mysong");
-let btn = document.getElementById("playBtn");
 
-btn.addEventListener("click", function () {
-    song.currentTime = 36;
-    song.play().catch(function(error){
-        console.log("Playback blocked:", error);
-    });
-    btn.style.display = "none";
-});
 </script>
 
 </body>
