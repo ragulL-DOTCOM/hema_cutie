@@ -104,6 +104,7 @@
     <source src="song.mp3" type="audio/mpeg">
 </audio>
 
+
 <div class="content">
     <!-- Small Photo Here -->
     <img src="forever.jpg" class="main-photo">
@@ -165,6 +166,13 @@ setTimeout(() => {
         origin: { y: 0.6 }
     });
 }, 10000);
+    let song = document.getElementById("mysong");
+
+document.addEventListener("click", function () {
+    song.currentTime = 36;   // start at 36 seconds
+    song.play();
+}, { once: true });
+
 </script>
 
 
