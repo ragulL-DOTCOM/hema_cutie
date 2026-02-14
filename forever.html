@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forever ❤️</title>
 
     <style>
@@ -14,7 +13,6 @@
             overflow: hidden;
         }
 
-        /* Blurred Background */
         .background {
             position: fixed;
             width: 100%;
@@ -24,20 +22,17 @@
             z-index: -1;
         }
 
-       .content {
+        .content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
 
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    padding: 20px;
-}
-
-
-        /* Small Center Photo */
         .main-photo {
             width: 250px;
             border-radius: 20px;
@@ -46,24 +41,32 @@
         }
 
         h1 {
-            font-size: 45px;
+            font-size: 40px;
             text-shadow: 0 0 15px pink;
         }
 
         .lyrics {
-    font-size: 26px;
-    max-width: 600px;
-    width: 90%;
-    margin-top: 20px;
-    line-height: 1.5;
-    text-shadow: 0 0 10px #ffb6c1;
-}
-
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            font-size: 22px;
+            max-width: 600px;
+            width: 90%;
+            margin-top: 20px;
+            line-height: 1.5;
+            text-shadow: 0 0 10px #ffb6c1;
         }
+
+        .quote {
+            position: absolute;
+            font-size: 16px;
+            font-style: italic;
+            color: #ffd6e0;
+            text-shadow: 0 0 10px pink;
+            opacity: 0.8;
+        }
+
+        .q1 { top: 15%; left: 10%; }
+        .q2 { bottom: 15%; left: 10%; }
+        .q3 { top: 20%; right: 10%; }
+        .q4 { bottom: 10%; right: 10%; }
 
         .heart {
             position: absolute;
@@ -75,26 +78,13 @@
             0% { transform: translateY(100vh); opacity: 1; }
             100% { transform: translateY(-10vh); opacity: 0; }
         }
-        .quote {
-    position: absolute;
-    font-size: 18px;
-    font-style: italic;
-    color: #ffd6e0;
-    text-shadow: 0 0 10px pink;
-    opacity: 0.8;
-}
 
-/* Positioning quotes around screen */
-.q1 { top: 15%; left: 10%; }
-.q2 { top: 70%; left: 15%; }
-.q3 { top: 25%; right: 10%; }
-.q4 { bottom: 15%; right: 15%; }
-      
-
-
-   
-
-
+        #herName {
+            margin-top: 25px;
+            font-size: 30px;
+            text-shadow: 0 0 20px hotpink;
+            opacity: 0;
+        }
 
     </style>
 </head>
@@ -103,93 +93,54 @@
 
 <div class="background"></div>
 
-<audio id="mysong">
-    <source src="song.mp3" type="audio/mpeg">
-</audio>
-
-
-
-
+<div class="quote q1">You are my always ❤️</div>
+<div class="quote q2">Forever starts with you 💫</div>
+<div class="quote q3">My favorite place is beside you 🌙</div>
+<div class="quote q4">I choose you. Every day. 💍</div>
 
 <div class="content">
-    <!-- Small Photo Here -->
+
     <img src="forever.jpg" class="main-photo">
 
     <h1>Until I Found You ❤️</h1>
 
     <div class="lyrics">
-        I would never fall in love again  
-        Until I found you…  
+        I would never fall in love again<br>
+        Until I found you…<br>
         I said, I would never fall unless it's you I fall into 💕
     </div>
-    <div class="quote q1">You are my always ❤️</div>
-<div class="quote q2">Forever starts with you 💫</div>
-<div class="quote q3">My favorite place is beside you 🌙</div>
-<div class="quote q4">I choose you. Every day. 💍</div>
-<h2 id="herName" style="opacity:0; margin-top:30px; font-size:40px; text-shadow:0 0 20px hotpink;">
-I Love You, (Hema) ❤️
-</h2>
+
+    <h2 id="herName">
+        I Love You, Hema ❤️
+    </h2>
 
 </div>
 
 <script>
-let song = document.getElementById("mysong");
+    // Floating hearts
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+        document.body.appendChild(heart);
 
-window.onload = function() {
-    song.currentTime = 36;
-    song.play();
-};
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
 
-// Floating hearts
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
-    document.body.appendChild(heart);
+    setInterval(createHeart, 400);
 
+    // Fade in name
     setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}
-
-setInterval(createHeart, 400);
-setTimeout(() => {
-    let name = document.getElementById("herName");
-    name.style.transition = "opacity 3s";
-    name.style.opacity = 1;
-}, 5000);
-
-</script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-<script>
-setTimeout(() => {
-    confetti({
-        particleCount: 300,
-        spread: 120,
-        origin: { y: 0.6 }
-    });
-}, 10000);
-    let song = document.getElementById("mysong");
-
-document.addEventListener("click", function () {
-    song.currentTime = 36;   // start at 36 seconds
-    song.play();
-}, { once: true });
-    <script>
-
+        let name = document.getElementById("herName");
+        name.style.transition = "opacity 3s";
+        name.style.opacity = 1;
+    }, 4000);
 </script>
 
 </body>
 </html>
 
-
-</script>
-
-
-
-
-</body>
-</html>
