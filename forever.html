@@ -25,17 +25,6 @@
         }
 
        .content {
-           <button id="playBtn" style="
-padding:10px 20px;
-font-size:16px;
-background:#ff4d6d;
-color:white;
-border:none;
-border-radius:20px;
-cursor:pointer;
-margin-bottom:15px;">
-Tap to Play Our Song ❤️
-</button>
 
     position: relative;
     display: flex;
@@ -185,16 +174,25 @@ document.addEventListener("click", function () {
     song.currentTime = 36;   // start at 36 seconds
     song.play();
 }, { once: true });
-
-</script>
-    let song = document.getElementById("mysong");
+    <script>
+let song = document.getElementById("mysong");
 let btn = document.getElementById("playBtn");
 
 btn.addEventListener("click", function () {
-    song.currentTime = 36;   // start at 36 sec
-    song.play();
-    btn.style.display = "none";  // hide button after tap
+    song.currentTime = 36;
+    song.play().catch(function(error){
+        console.log("Playback blocked:", error);
+    });
+    btn.style.display = "none";
 });
+</script>
+
+</body>
+</html>
+
+
+</script>
+
 
 
 
